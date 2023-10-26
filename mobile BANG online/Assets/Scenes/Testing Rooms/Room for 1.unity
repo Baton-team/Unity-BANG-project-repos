@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 366283383}
+    - target: {fileID: 2159906400321871619, guid: 602379efdd2bcca4bb81638d500836e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeaveRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 6720825833491035868, guid: 602379efdd2bcca4bb81638d500836e2, type: 3}
       propertyPath: m_Name
       value: Leave Button
