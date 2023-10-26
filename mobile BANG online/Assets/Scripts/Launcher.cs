@@ -101,7 +101,8 @@ namespace Com.MyCompany.MyGame
 
                 // #Critical
                 // Load the Room Level.
-                PhotonNetwork.LoadLevel("Room for 1");
+                //PhotonNetwork.LoadLevel("Room for 1");
+                PhotonNetwork.LoadLevel("Room for 4");
             }
         }
 
