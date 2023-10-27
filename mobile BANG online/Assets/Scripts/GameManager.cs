@@ -11,6 +11,21 @@ namespace Com.MyCompany.MyGame
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        #region Public Fields
+
+        public static GameManager Instance;
+
+        #endregion
+
+        #region MonoBehaviour CallBacks
+
+        void Start()
+        {
+            Instance = this;
+        }
+
+        #endregion
+
         #region Photon Callbacks
 
         public override void OnLeftRoom()
@@ -52,7 +67,7 @@ namespace Com.MyCompany.MyGame
         }
 
         #endregion
-
+        
         #region Private Methods
 
         void LoadArena()
