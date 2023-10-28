@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764868194775",
+    "project_id": "mobile-bang-online",
+    "storage_bucket": "mobile-bang-online.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764868194775:android:6c12007eca4f392c7c9b92",
+        "android_client_info": {
+          "package_name": "com.Batonteam.mobileBANGonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzQZ73AsAzd6y8TIN06HEFr9H1nB4MGcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
