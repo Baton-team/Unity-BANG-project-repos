@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4793273810862649611, guid: 4f8c34be09a67524d9dea5c13c591829, type: 3}
+      propertyPath: ObservedComponentsFoldoutOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793273810862649611, guid: 4f8c34be09a67524d9dea5c13c591829, type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5111253488684941170, guid: 4f8c34be09a67524d9dea5c13c591829, type: 3}
       propertyPath: m_Name
       value: My Robot Kyle
