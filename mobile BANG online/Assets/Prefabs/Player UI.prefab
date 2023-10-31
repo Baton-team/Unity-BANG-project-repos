@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6776219995781275312}
   - component: {fileID: 5272185995590530177}
   - component: {fileID: 4733043724773962795}
-  - component: {fileID: 5015677527969159137}
+  - component: {fileID: 7772206646705121798}
   m_Layer: 5
   m_Name: Player UI
   m_TagString: Untagged
@@ -105,7 +105,7 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &5015677527969159137
+--- !u!114 &7772206646705121798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +114,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2107562254907474343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba1a179e553446f0a08606778f559f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6588f5b3ca4287742806d21d961adcba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenOffset: {x: 0, y: 30, z: 0}
   playerNameText: {fileID: 2758753350489986084}
   playerHealthSlider: {fileID: 5272185995590530177}
+  screenOffset: {x: 0, y: 30, z: 0}
 --- !u!1 &3467912147385536103
 GameObject:
   m_ObjectHideFlags: 0
