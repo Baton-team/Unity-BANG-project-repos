@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 using Photon.Pun;
+using Photon.Realtime;
 
 using System.Collections;
+using Photon.Pun.Demo.PunBasics;
 
 namespace Com.MyCompany.MyGame
 {
@@ -11,8 +13,27 @@ namespace Com.MyCompany.MyGame
     /// Player manager.
     /// Handles fire Input and Beams.
     /// </summary>
-    public class PlayerManager : MonoBehaviourPunCallbacks
+    public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
+        #region IPunObservable implementation
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if(stream.IsWriting)
+            {
+                // We own this player: send the others our data
+                stream.SendNext(IsFiring);
+                stream.SendNext(Health);
+            }
+            else{
+                // Network player, receive data
+                this.IsFiring = (bool)stream.ReceiveNext();
+                this.Health = (float)stream.ReceiveNext();
+            }
+        }
+
+        #endregion
+
         #region Private Fields
 
         [Tooltip("The Beams GameObject to control")]
@@ -46,12 +67,32 @@ namespace Com.MyCompany.MyGame
             }
         }
 
+        void Start()
+        {
+            CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+
+            if(_cameraWork != null)
+            {
+                if(photonView.IsMine)
+                {
+                    _cameraWork.OnStartFollowing();
+                }
+            }
+            else
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+            }
+        }
+
         /// <summary>
         /// MonoBehaviour method called on GameObject by Unity on every frame.
         /// </summary>
         void Update()
         {
-            ProcessInputs();
+            if(photonView.IsMine)
+            {
+                ProcessInputs();
+            }
 
             // trigger Beams active state
             if (beams != null && IsFiring != beams.activeInHierarchy)
