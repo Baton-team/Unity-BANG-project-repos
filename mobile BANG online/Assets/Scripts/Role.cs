@@ -3,36 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Role : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    public string Name { get; }
-
-    public Role(string name)
+    public class Role : MonoBehaviour
     {
-        try
+        public string Name { get; }
+
+        public Role(string name)
         {
-            switch (name)
+            try
             {
-                case "Sheriff":
-                    Name = "Sheriff";
-                    break;
-                case "Bandit":
-                    Name = "Bandit";
-                    break;
-                case "Assistant":
-                    Name = "Assistant";
-                    break;
-                case "Renegade":
-                    Name = "Renegade";
-                    break;
-                default:
-                    throw new ArgumentException("The name is not suitable.");
+                switch (name)
+                {
+                    case "Sheriff":
+                        Name = "Sheriff";
+                        break;
+                    case "Bandit":
+                        Name = "Bandit";
+                        break;
+                    case "Assistant":
+                        Name = "Assistant";
+                        break;
+                    case "Renegade":
+                        Name = "Renegade";
+                        break;
+                    default:
+                        throw new ArgumentException("The name is not suitable.");
+                }
+            }
+            catch (ArgumentException)
+            {
+                //the name is not suitable
+                Console.WriteLine("The name is not suitable.");
             }
         }
-        catch (ArgumentException)
-        {
-            //the name is not suitable
-            Console.WriteLine("The name is not suitable.");
-        }
     }
+
 }

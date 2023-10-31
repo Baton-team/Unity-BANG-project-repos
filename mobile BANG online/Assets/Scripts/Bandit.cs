@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Bandit : Role
+namespace Com.BATONteam.mobileBANGonline
 {
-    public Bandit() : base("Bandit")
+    class Bandit : Role
     {
+        public Bandit() : base("Bandit")
+        {
+        }
     }
 }

@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    void Start()
+    public class Card : MonoBehaviour
     {
+        void Start()
+        {
 
-    }
-    protected string Name;
+        }
+        protected string Name;
 
-    protected bool IsPlayable;
+        protected bool IsPlayable;
 
-    public Card(string name)
-    {
-        Name = name;
-        IsPlayable = true;
-    }
-    public void CopyFrom(Card another)
-    {
-        this.Name = another.Name;
-        this.IsPlayable = another.IsPlayable;
-    }
-    public virtual void Ability(IPlayer another)
-    {
-        if (another == null) { }
-    }
+        public Card(string name)
+        {
+            Name = name;
+            IsPlayable = true;
+        }
+        public void CopyFrom(Card another)
+        {
+            this.Name = another.Name;
+            this.IsPlayable = another.IsPlayable;
+        }
+        public virtual void Ability(IPlayer another)
+        {
+            if (another == null) { }
+        }
 
-    void Update()
-    {
+        void Update()
+        {
 
+        }
     }
 }

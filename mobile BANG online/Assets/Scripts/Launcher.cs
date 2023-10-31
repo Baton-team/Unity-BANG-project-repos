@@ -4,7 +4,7 @@ using Photon.Realtime;
 using Unity.VisualScripting;
 using System.Linq.Expressions;
 
-namespace Com.MyCompany.MyGame
+namespace Com.BATONteam.mobileBANGonline
 {
     public class Launcher : MonoBehaviourPunCallbacks
     {

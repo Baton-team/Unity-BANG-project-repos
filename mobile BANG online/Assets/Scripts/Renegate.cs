@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Renegate : Role
+namespace Com.BATONteam.mobileBANGonline
 {
-    public Renegade() : base("Renegade")
+    class Renegate : Role
     {
+        public Renegade() : base("Renegade")
+        {
+        }
     }
 }

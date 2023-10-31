@@ -3,44 +3,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Deck : MonoBehaviour
     {
-        
-    }
-    public List<Card> cards;
-
-    public Deck()
-    {
-        cards = new List<Card>();
-        for (int i = 0; i < 25; i++)
+        // Start is called before the first frame update
+        void Start()
         {
-            Bang bang = new Bang("Bang");
-            cards.Add(bang);
+            
         }
-    }
+        public List<Card> cards;
 
-    private void Shuffle()
-    {
-        System.Random rng = new System.Random();
-        cards.Sort((a, b) => rng.Next(-1, 2));
-    }
-
-    public Card GiveCard()
-    {
-        Card FirstCard = cards[0];
-        cards.RemoveAt(0);
-        if (cards.Count == 0)
+        public Deck()
         {
             cards = new List<Card>();
+            for (int i = 0; i < 25; i++)
+            {
+                Bang bang = new Bang("Bang");
+                cards.Add(bang);
+            }
         }
-        return FirstCard;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        private void Shuffle()
+        {
+            System.Random rng = new System.Random();
+            cards.Sort((a, b) => rng.Next(-1, 2));
+        }
+
+        public Card GiveCard()
+        {
+            Card FirstCard = cards[0];
+            cards.RemoveAt(0);
+            if (cards.Count == 0)
+            {
+                cards = new List<Card>();
+            }
+            return FirstCard;
+        }
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }

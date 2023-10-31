@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Sheriff : Role
+namespace Com.BATONteam.mobileBANGonline
 {
-    public Sheriff() : base("Sheriff")
+    class Sheriff : Role
     {
+        public Sheriff() : base("Sheriff")
+        {
+        }
     }
 }

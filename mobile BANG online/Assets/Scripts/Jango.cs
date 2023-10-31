@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class Jango : IPlayer
+namespace Com.BATONteam.mobileBANGonline
+{
+    public class Jango : IPlayer
 {
     void Start()
     {
@@ -17,4 +19,5 @@ public class Jango : IPlayer
     {
 
     }
+}
 }

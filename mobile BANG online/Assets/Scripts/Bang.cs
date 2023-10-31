@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bang : Card
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    
-    public Bang(string name) : base(name) {}
-
-    public override void Ability(IPlayer target)
+    public class Bang : Card
     {
-        if (IsPlayable)
+        // Start is called before the first frame update
+        
+        public Bang(string name) : base(name) {}
+
+        public override void Ability(IPlayer target)
         {
-            target.TakeDamage();
+            if (IsPlayable)
+            {
+                target.TakeDamage();
+            }
         }
+        // Update is called once per frame
+        
     }
-    // Update is called once per frame
-    
 }
