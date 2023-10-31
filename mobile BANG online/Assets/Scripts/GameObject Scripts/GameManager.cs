@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-namespace Com.MyCompany.MyGame
+namespace Com.BATONteam.mobileBANGonline
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
