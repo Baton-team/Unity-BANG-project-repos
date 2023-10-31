@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Role
+public class Role : MonoBehaviour
 {
     public string Name { get; }
 

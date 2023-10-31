@@ -5,10 +5,7 @@ using UnityEngine;
 public abstract class IPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     Role Role;
     string Name;
     string ID;
@@ -61,8 +58,4 @@ public abstract class IPlayer : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

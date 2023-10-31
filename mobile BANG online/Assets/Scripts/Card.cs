@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Card : MonoBehaviour
+public class Card : MonoBehaviour
 {
+    void Start()
+    {
+
+    }
     protected string Name;
 
     protected bool IsPlayable;
@@ -21,5 +25,10 @@ public abstract class Card : MonoBehaviour
     public virtual void Ability(IPlayer another)
     {
         if (another == null) { }
+    }
+
+    void Update()
+    {
+
     }
 }

@@ -5,10 +5,7 @@ using UnityEngine;
 public class Bang : Card
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
     public Bang(string name) : base(name) {}
 
     public override void Ability(IPlayer target)
@@ -19,8 +16,5 @@ public class Bang : Card
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
