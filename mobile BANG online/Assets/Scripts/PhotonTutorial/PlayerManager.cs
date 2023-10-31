@@ -59,6 +59,10 @@ namespace Com.MyCompany.MyGame
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
+        [Tooltip("The Player's UI GameObject Prefab")]
+        [SerializeField]
+        public GameObject PlayerUiPrefab;
+
         #endregion
 
         #region MonoBehaviour CallBacks
@@ -82,6 +86,9 @@ namespace Com.MyCompany.MyGame
 
         void CalledOnLevelWasLoaded(int level)
         {
+            GameObject _uiGo = Instantiate(this.PlayerUiPrefab);
+            _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+
             // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
             if (!Physics.Raycast(transform.position, -Vector3.up, 5f))
             {
@@ -116,6 +123,16 @@ namespace Com.MyCompany.MyGame
 
         void Start()
         {
+            if(PlayerUiPrefab != null)
+            {
+                GameObject _uiGo = Instantiate(PlayerUiPrefab);
+                _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+            }
+            else
+            {
+                Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
+            }
+
             CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
             if(_cameraWork != null)
