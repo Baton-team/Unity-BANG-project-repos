@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
+    path: Assets/Scenes/Testing/Start Screen.unity
+    guid: a65698642a24fad45952ca2cc4f7ac23
+  - enabled: 1
+    path: Assets/Scenes/Testing/Main.unity
+    guid: 30244b20d8ceaa84f880916b8295f1a5
+  - enabled: 1
     path: Assets/Scenes/Launcher/Launcher.unity
     guid: 9bc809676177b524dbc99f34811a7332
   - enabled: 1
@@ -26,4 +32,3 @@ EditorBuildSettings:
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: aea318819e8e1ee4c8863c676f85e9e7, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: a1d1b22f1c41d154a88b383741424a88, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6dc85736f5cdef44aa52458c24a65974, type: 2}
