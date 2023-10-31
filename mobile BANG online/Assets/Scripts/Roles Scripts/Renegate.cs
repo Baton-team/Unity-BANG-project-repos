@@ -7,7 +7,7 @@ namespace Com.BATONteam.mobileBANGonline
 {
     class Renegate : Role
     {
-        public Renegade() : base("Renegade")
+        public Renegate() : base("Renegade")
         {
         }
     }
