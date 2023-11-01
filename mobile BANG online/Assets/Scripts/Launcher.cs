@@ -117,7 +117,7 @@ namespace Com.BATONteam.mobileBANGonline
         /// - If already connected, we attempt joining a random room
         /// - if not yet connected, Connect this application instance to Photon Cloud Network
         /// </summary>
-        public void Connect()
+        public void ConnectToRandomRoom()
         {
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
