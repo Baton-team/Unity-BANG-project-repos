@@ -3,6 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using Unity.VisualScripting;
 using System.Linq.Expressions;
+using UnityEngine.UI;
 
 namespace Com.BATONteam.mobileBANGonline
 {
@@ -23,12 +24,18 @@ namespace Com.BATONteam.mobileBANGonline
         /// </summary>
         string gameVersion = "1";
 
+        byte roomFor = 4;
+
         [Tooltip("The Ui Panel to let the user enter name, connect and play")]
         [SerializeField]
         private GameObject controlPanel;
         [Tooltip("The Ui Label to inform the user that the connection is in progress")]
         [SerializeField]
         private GameObject progressLabel;
+
+        [Tooltip("Input the name of room is created.")]
+        [SerializeField]
+        private InputField existingRoomNameInputField;
 
         /// <summary>
         /// Keep track of the current process. Since connection is asynchronous and is based on several callbacks from Photon,
@@ -55,20 +62,21 @@ namespace Com.BATONteam.mobileBANGonline
         /// MonoBehaviour method called on GameObject by Unity during initialization phase.
         /// </summary>
         void Start()
-        {
-            ///Connect();
-            
+        {            
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
         }
 
+        #endregion
+
+        #region PUN CallBacks
+
         public override void OnConnectedToMaster()
         {
-            Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
+            Debug.Log("Launcher: OnConnectedToMaster() was called by PUN");
             if (isConnecting)
             {
                 // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-                PhotonNetwork.JoinRandomRoom();
                 isConnecting = false;
             }
         }
@@ -82,9 +90,9 @@ namespace Com.BATONteam.mobileBANGonline
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
-        public override void OnJoinRandomFailed(short returnCode, string message)
+        public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.Log("PUN Basics Tutorial/Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
+            Debug.Log("Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
             PhotonNetwork.CreateRoom(null, new RoomOptions {MaxPlayers = maxPlayersPerRoom});
@@ -92,23 +100,22 @@ namespace Com.BATONteam.mobileBANGonline
 
         public override void OnJoinedRoom()
         {
-            Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+            Debug.Log("Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
 
             // #Critical: We only load if we are the first player, else we rely on `PhotonNetwork.AutomaticallySyncScene` to sync our instance scene.
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                //Debug.Log("We load the 'Room for 1' ");
+                //Debug.Log("We load the 'Room for ...' ");
                 Debug.Log("We load the Room");
 
                 // #Critical
                 // Load the Room Level.
-                //PhotonNetwork.LoadLevel("Room for 1");
-                PhotonNetwork.LoadLevel("Room for 4");
+                //PhotonNetwork.LoadLevel("Room for ...");
+                PhotonNetwork.LoadLevel("Room for " + roomFor);
             }
         }
 
         #endregion
-
 
         #region Public Methods
 
@@ -124,6 +131,43 @@ namespace Com.BATONteam.mobileBANGonline
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
+            }
+            else
+            {
+                isConnecting = PhotonNetwork.ConnectUsingSettings();
+                PhotonNetwork.GameVersion = gameVersion;
+            }
+        }
+
+        public void CreateRoom()
+        {
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);
+            if (PhotonNetwork.IsConnected)
+            {
+                Debug.Log("Launcher: CreateRoom() called. It's creating room.");
+
+                RoomOptions roomOptions = new RoomOptions
+                {
+                    MaxPlayers = maxPlayersPerRoom
+                };
+
+                PhotonNetwork.CreateRoom(null, new RoomOptions {MaxPlayers = maxPlayersPerRoom});
+            }
+            else
+            {
+                isConnecting = PhotonNetwork.ConnectUsingSettings();
+                PhotonNetwork.GameVersion = gameVersion;
+            }
+        }
+
+        public void ConnectToSpecificRoom()
+        {
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);
+            if (PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.JoinRoom(existingRoomNameInputField.text);
             }
             else
             {
