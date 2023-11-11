@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 833730166}
   - component: {fileID: 833730165}
   - component: {fileID: 833730164}
+  - component: {fileID: 833730167}
   m_Layer: 5
   m_Name: Online Connection Button
   m_TagString: Untagged
@@ -442,8 +443,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 914337646}
-        m_TargetAssemblyTypeName: Com.BATONteam.mobileBANGonline.MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 833730167}
+        m_TargetAssemblyTypeName: Com.BATONteam.mobileBANGonline.GameSceneManager,
+          Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 2
         m_Arguments:
@@ -492,48 +494,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833730162}
   m_CullTransparentMesh: 1
---- !u!1 &914337644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 914337645}
-  - component: {fileID: 914337646}
-  m_Layer: 0
-  m_Name: MenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &914337645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914337644}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 564.35956, y: 285.48013, z: 2.8643205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &914337646
+--- !u!114 &833730167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914337644}
+  m_GameObject: {fileID: 833730162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e66275746f143d4f9f2cbfa265f084e, type: 3}
+  m_Script: {fileID: 11500000, guid: b420f4c82aa3cb6489e348a7b030fe0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &999679928
@@ -719,6 +689,7 @@ GameObject:
   - component: {fileID: 1717518969}
   - component: {fileID: 1717518968}
   - component: {fileID: 1717518967}
+  - component: {fileID: 1717518970}
   m_Layer: 5
   m_Name: How to Play Button
   m_TagString: Untagged
@@ -790,8 +761,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 914337646}
-        m_TargetAssemblyTypeName: Com.BATONteam.mobileBANGonline.MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1717518970}
+        m_TargetAssemblyTypeName: Com.BATONteam.mobileBANGonline.GameSceneManager,
+          Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 2
         m_Arguments:
@@ -840,6 +812,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717518965}
   m_CullTransparentMesh: 1
+--- !u!114 &1717518970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717518965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b420f4c82aa3cb6489e348a7b030fe0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1811887543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,4 +1001,3 @@ SceneRoots:
   - {fileID: 999679931}
   - {fileID: 1811887547}
   - {fileID: 2099025684}
-  - {fileID: 914337645}

@@ -6,16 +6,25 @@ using UnityEngine.SceneManagement;
 
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor;
 
 namespace Com.BATONteam.mobileBANGonline
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        #region Private Serializable Fields
+
+        [Tooltip("The scene we exit in")]
+        [SerializeField]
+        private SceneAsset exitScene;
+
+        #endregion
+
         #region Photon Callbacks
 
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene("Online Launcher");
+            SceneManager.LoadScene(exitScene.name);
         }
 
         public override void OnPlayerEnteredRoom(Player other)

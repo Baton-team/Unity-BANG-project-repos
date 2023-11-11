@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Com.BATONteam.mobileBANGonline
 {
-    public class MenuManager : MonoBehaviour
+    public class GameSceneManager : MonoBehaviour
     {
         #region MonoBehaviour Callbacks
-        
         void Start()
         {
             
@@ -17,12 +14,12 @@ namespace Com.BATONteam.mobileBANGonline
 
         void Update()
         {
-            
+
         }
 
         #endregion
 
-        #region Public Methods
+        #region Public Method
 
         public void ChangeScene(SceneAsset nextScene)
         {
