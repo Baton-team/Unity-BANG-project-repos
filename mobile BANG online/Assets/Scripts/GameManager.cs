@@ -15,7 +15,7 @@ namespace Com.BATONteam.mobileBANGonline
 
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Online Launcher");
         }
 
         public override void OnPlayerEnteredRoom(Player other)
@@ -63,11 +63,8 @@ namespace Com.BATONteam.mobileBANGonline
                 return;
             }
 
-            // #Critical: we should not load different rooms
-            //Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            //PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", 4);
-            PhotonNetwork.LoadLevel("Room for " + 4);
+            PhotonNetwork.LoadLevel("Game Area");
         }
 
         #endregion

@@ -26,9 +26,20 @@ namespace Com.BATONteam.mobileBANGonline
         /// <summary>
         /// The Input Field where we text host room name.
         /// </summary>
+        [Tooltip("The Input Field where we text host room name we join")]
+        [SerializeField]
+        private InputField joinRoomNameInputField;
+
         [Tooltip("The Input Field where we text host room name")]
         [SerializeField]
-        private InputField roomNameInputField;
+        private InputField createRoomNameInputField;
+
+        [Tooltip("The Ui Panel to let the user enter name, connect and play")]
+        [SerializeField]
+        private GameObject controlPanel;
+        [Tooltip("The UI Label to inform the user that the connection is in progress")]
+        [SerializeField]
+        private GameObject progressLabel;
 
         #endregion
 
@@ -58,23 +69,27 @@ namespace Com.BATONteam.mobileBANGonline
         /// </summary>
         void Start()
         {
-
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
+            PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.GameVersion = gameVersion;
         }
 
         #endregion
 
         #region MonoBehaviourPunCallbacks Callbacks
 
-        /*public override void OnConnectedToMaster()
+        public override void OnConnectedToMaster()
         {
-            Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
-
-            PhotonNetwork.JoinRandomRoom();
-        } */
+            Debug.Log("Launcher: OnConnectedToMaster() was called by PUN. We are connected to lobby.");
+        }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
+
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
         }
 
         public override void OnJoinRandomFailed(short returnCode, string message)
@@ -88,6 +103,8 @@ namespace Com.BATONteam.mobileBANGonline
         public override void OnJoinedRoom()
         {
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+
+            PhotonNetwork.LoadLevel("Game Area");
         }
 
         #endregion
@@ -101,7 +118,10 @@ namespace Com.BATONteam.mobileBANGonline
         /// </summary>
         public void ConnectToRandomRoom()
         {
-            Debug.Log("Launcher: It's connecting to the random room...");            
+            Debug.Log("Launcher: It's connecting to the random room...");  
+
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);          
 
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
@@ -121,9 +141,17 @@ namespace Com.BATONteam.mobileBANGonline
         {
             Debug.Log("Launcher: It's connecting to the specific room...");
 
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);
+
             if (PhotonNetwork.IsConnected)
             {
-                PhotonNetwork.JoinRoom(roomNameInputField.text);
+                if (joinRoomNameInputField.text == "")
+                {
+                    ConnectToRandomRoom();
+                }
+                
+                PhotonNetwork.JoinRoom(joinRoomNameInputField.text);
             }
             else
             {
@@ -135,9 +163,20 @@ namespace Com.BATONteam.mobileBANGonline
         public void CreateHostRoom()
         {
             Debug.Log("Launcher: It's creating host room...");
+
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);  
+
             if (PhotonNetwork.IsConnected)
             {
-                PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+                if(createRoomNameInputField.text != "")
+                {
+                    PhotonNetwork.CreateRoom(createRoomNameInputField.text, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+                }
+                else
+                {
+                    PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+                }
             }
             else
             {
