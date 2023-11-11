@@ -81,7 +81,7 @@ namespace Com.BATONteam.mobileBANGonline
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("Launcher: OnConnectedToMaster() was called by PUN. We are connected to lobby.");
+            Debug.Log("Launcher: OnConnectedToMaster() was called by PUN");
         }
 
         public override void OnDisconnected(DisconnectCause cause)
