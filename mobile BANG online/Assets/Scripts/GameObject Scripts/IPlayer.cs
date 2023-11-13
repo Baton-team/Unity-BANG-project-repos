@@ -16,7 +16,7 @@ namespace Com.BATONteam.mobileBANGonline
         Weapon Weapon;
         int DisanceTo;
         int DistanceFrom;//?
-        bool IsDead;
+        bool IsDead = false;
 
         public void TakeCard(Deck deck)
         {
