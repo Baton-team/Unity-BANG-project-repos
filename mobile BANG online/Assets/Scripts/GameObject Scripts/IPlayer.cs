@@ -8,15 +8,20 @@ namespace Com.BATONteam.mobileBANGonline
     {
         // Start is called before the first frame update
 
-        Role Role;
-        string Name;
-        string ID;
-        int Hp;
-        List<Card> Hand;
-        Weapon Weapon;
-        int DisanceTo;
-        int DistanceFrom;//?
-        bool IsDead = false;
+        private Role Role;
+        private string Name;
+        private string ID;
+        private int Hp;
+        private List<Card> Hand;
+        private Weapon Weapon;
+        private int DisanceTo;
+        private int DistanceFrom;//?
+        private bool IsDead = false;
+
+        void Start()
+        {
+            
+        }
 
         public void TakeCard(Deck deck)
         {
@@ -46,6 +51,7 @@ namespace Com.BATONteam.mobileBANGonline
 
         }
 
+        /*
         public IPlayer(Role role, string name, int hp, Deck deck)
         {
             Role = role;
@@ -60,6 +66,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
         }
         // Update is called once per frame
+        */
     }
 
 }

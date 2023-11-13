@@ -1,6 +1,5 @@
-using UnityEditor;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 namespace Com.BATONteam.mobileBANGonline
 {
@@ -21,9 +20,9 @@ namespace Com.BATONteam.mobileBANGonline
 
         #region Public Method
 
-        public void ChangeScene(SceneAsset nextScene)
+        public void ChangeScene(string nextSceneName)
         {
-            SceneManager.LoadScene(nextScene.name);
+            SceneManager.LoadScene(nextSceneName);
         }
 
         #endregion

@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEditor;
 
 namespace Com.BATONteam.mobileBANGonline
 {
@@ -16,7 +12,7 @@ namespace Com.BATONteam.mobileBANGonline
 
         [Tooltip("The scene we exit in")]
         [SerializeField]
-        private SceneAsset exitScene;
+        private string exitScene;
 
         #endregion
 
@@ -24,7 +20,7 @@ namespace Com.BATONteam.mobileBANGonline
 
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(exitScene.name);
+            SceneManager.LoadScene(exitScene);
         }
 
         public override void OnPlayerEnteredRoom(Player other)
