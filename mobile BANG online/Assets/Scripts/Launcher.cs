@@ -71,6 +71,8 @@ namespace Com.BATONteam.mobileBANGonline
         {
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
+
+            
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = gameVersion;
         }
@@ -82,6 +84,13 @@ namespace Com.BATONteam.mobileBANGonline
         public override void OnConnectedToMaster()
         {
             Debug.Log("Launcher: OnConnectedToMaster() was called by PUN");
+
+            PhotonNetwork.JoinLobby();
+        }
+
+        public override void OnJoinedLobby()
+        {
+            Debug.Log("We are joined to Lobby.");
         }
 
         public override void OnDisconnected(DisconnectCause cause)
@@ -131,6 +140,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
             else
             {
+                Debug.Log("IS NOT CONNECTED");
                 // #Critical, we must first and foremost connect to Photon Online Server.
                 PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
@@ -155,6 +165,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
             else
             {
+                Debug.Log("IS NOT CONNECTED");
                 PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
             }
@@ -180,6 +191,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
             else
             {
+                Debug.Log("IS NOT CONNECTED");
                 PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
             }
