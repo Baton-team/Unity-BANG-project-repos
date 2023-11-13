@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityEditor;
+
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 namespace Com.BATONteam.mobileBANGonline
 {
@@ -10,9 +13,13 @@ namespace Com.BATONteam.mobileBANGonline
     {
         #region Private Serializable Fields
 
-        [Tooltip("The scene we exit in")]
+        [Tooltip("The scene we exit in.")]
         [SerializeField]
         private string exitScene;
+
+        [Tooltip("There we show Room Name.")]
+        [SerializeField]
+        private Text roomName;
 
         #endregion
 
@@ -70,6 +77,19 @@ namespace Com.BATONteam.mobileBANGonline
 
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", 4);
             PhotonNetwork.LoadLevel("Game Area");
+        }
+
+        #endregion
+
+        #region MonoBehaviour Callbacks
+        void Start()
+        {
+            roomName.text = PhotonNetwork.CurrentRoom.Name;
+        }
+
+        void Update()
+        {
+
         }
 
         #endregion
