@@ -127,19 +127,7 @@ namespace Com.BATONteam.mobileBANGonline
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);     
 
-            // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
-            if (PhotonNetwork.IsConnected)
-            {
-                // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-                PhotonNetwork.JoinRandomRoom();
-            }
-            else
-            {
-                LogsManager.WriteLog("IS NOT CONNECTED");
-                // #Critical, we must first and foremost connect to Photon Online Server.
-                PhotonNetwork.ConnectUsingSettings();
-                PhotonNetwork.GameVersion = gameVersion;
-            }
+            PhotonNetwork.JoinRandomRoom();
         }
 
         public void ConnectToSpecificRoom()
@@ -149,23 +137,7 @@ namespace Com.BATONteam.mobileBANGonline
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
 
-            if (PhotonNetwork.IsConnected)
-            {
-                if (joinRoomNameInputField.text == "")
-                {
-                    ConnectToRandomRoom();
-                }
-                else
-                {
-                    PhotonNetwork.JoinRoom(joinRoomNameInputField.text);
-                }
-            }
-            else
-            {
-                LogsManager.WriteLog("IS NOT CONNECTED");
-                PhotonNetwork.ConnectUsingSettings();
-                PhotonNetwork.GameVersion = gameVersion;
-            }
+            PhotonNetwork.JoinRoom(joinRoomNameInputField.text);
         }
 
         public void CreateHostRoom()
@@ -173,24 +145,15 @@ namespace Com.BATONteam.mobileBANGonline
             LogsManager.WriteLog("Launcher: It's creating host room..." + Convert.ToString(PhotonNetwork.IsConnected));
 
             progressLabel.SetActive(true);
-            controlPanel.SetActive(false);  
+            controlPanel.SetActive(false);
 
-            if (PhotonNetwork.IsConnected)
+            if(createRoomNameInputField.text != "")
             {
-                if(createRoomNameInputField.text != "")
-                {
-                    PhotonNetwork.CreateRoom(createRoomNameInputField.text, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
-                }
-                else
-                {
-                    PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
-                }
+                PhotonNetwork.CreateRoom(createRoomNameInputField.text, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
             }
             else
             {
-                LogsManager.WriteLog("IS NOT CONNECTED");
-                PhotonNetwork.ConnectUsingSettings();
-                PhotonNetwork.GameVersion = gameVersion;
+                PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
             }
         }
 
