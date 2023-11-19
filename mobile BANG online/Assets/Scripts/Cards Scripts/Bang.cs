@@ -14,7 +14,7 @@ namespace Com.BATONteam.mobileBANGonline
         {
             if (IsPlayable)
             {
-                target.TakeDamage();
+                target.React();
             }
         }
         // Update is called once per frame
