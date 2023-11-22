@@ -900,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 1793396277}
     - target: {fileID: 5527208422118248604, guid: 44df303be9fbff54dbe9e2e0626656d7, type: 3}
       propertyPath: exitScene
-      value: Online Launcher
+      value: Main Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
