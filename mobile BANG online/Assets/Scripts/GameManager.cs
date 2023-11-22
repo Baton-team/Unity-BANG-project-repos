@@ -82,6 +82,8 @@ namespace Com.BATONteam.mobileBANGonline
         #endregion
 
         #region MonoBehaviour Callbacks
+
+
         void Start()
         {
             roomName.text = PhotonNetwork.CurrentRoom.Name;
@@ -93,5 +95,7 @@ namespace Com.BATONteam.mobileBANGonline
         }
 
         #endregion
+
+
     }
 }
