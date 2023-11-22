@@ -8,33 +8,32 @@ namespace Com.BATONteam.mobileBANGonline
     {
         // Start is called before the first frame update
 
-        protected Role Role;
-        protected string Name;
-        protected string ID;
-        protected int Hp;
-        public List<Card> Hand;
-        protected Weapon Weapon;
-        protected int DisanceTo;
-        protected int DistanceFrom;//?
-        protected bool IsDead;
+        private Role Role;
+        private string Name;
+        private string ID;
+        private int Hp;
+        private List<Card> Hand;
+        private Weapon Weapon;
+        private int DisanceTo;
+        private int DistanceFrom;//?
+        private bool IsDead = false;
 
-        //void Start()
-        //{
+        void Start()
+        {
             
-        //}
+        }
 
         public void TakeCard(Deck deck)
         {
             if (deck.cards.Count > 0)
             {
-                Hand.Add(deck.GiveCard());
-                
+                Hand.Add(deck.cards[0]);
+                deck.GiveCard();
             }
         }
 
-        public virtual void TakeDamage()
+        public void TakeDamage()
         {
-
             Hp -= 1;
             if (Hp <= 0)
             {
@@ -42,7 +41,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
         }
 
-        public virtual void PlayCards()
+        public void PlayCards()
         {
 
         }
