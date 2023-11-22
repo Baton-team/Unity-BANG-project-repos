@@ -16,7 +16,7 @@ namespace Com.BATONteam.mobileBANGonline
         protected Weapon Weapon;
         protected int DisanceTo;
         protected int DistanceFrom;//?
-        protected bool IsDead = false;
+        protected bool IsDead;
 
         //void Start()
         //{
@@ -27,12 +27,12 @@ namespace Com.BATONteam.mobileBANGonline
         {
             if (deck.cards.Count > 0)
             {
-                Hand.Add(deck.cards[0]);
-                deck.GiveCard();
+                Hand.Add(deck.GiveCard());
+                
             }
         }
 
-        public virtual void TakeDamage(IPlayer another)
+        public virtual void TakeDamage()
         {
 
             Hp -= 1;
@@ -42,7 +42,7 @@ namespace Com.BATONteam.mobileBANGonline
             }
         }
 
-        public void PlayCards()
+        public virtual void PlayCards()
         {
 
         }

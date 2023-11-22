@@ -456,7 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2ea124d855e2042a2232c8bde7e20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterslist: []
+  characterslist:
+  - {fileID: 5811833518297233433, guid: 1106cc3807944194d99a59eef9a7d5d8, type: 3}
   characters: []
 --- !u!4 &987516069
 Transform:

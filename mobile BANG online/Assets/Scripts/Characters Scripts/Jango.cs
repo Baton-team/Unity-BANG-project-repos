@@ -13,12 +13,12 @@ namespace Com.BATONteam.mobileBANGonline
             {
                 ++Hp;
             }
-            Weapon = new Weapon("Schofield", 1);
+            Weapon = new Weapon("Kolt", 1);
             DisanceTo = Weapon.Distance;
             IsDead = false;
         }
 
-        public override void TakeDamage(IPlayer another)
+        public new void TakeDamage(IPlayer another)
         {
             base.TakeDamage(another);
             int rand = Random.Range(0, another.Hand.Count);
