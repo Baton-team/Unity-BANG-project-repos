@@ -1,11 +1,9 @@
 using System;
 using System.IO;
 
-using UnityEngine;
-
 namespace Com.BATONteam.mobileBANGonline
 {
-    public static class LogsManager : Debug
+    public static class LogsManager
     {
         private static readonly string logFilePath = "Logs/mobileBANGonlineLog.txt";
 
