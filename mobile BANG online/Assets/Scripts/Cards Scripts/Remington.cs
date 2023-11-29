@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Remington : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Remington : Weapon
     {
-        
-    }
+        public int id;
+        public string Name = "Remington";
+        public string cardDiscription = "Remington card";
 
-    // Update is called once per frame
-    void Update()
-    {
+        public bool IsPlayable;
         
+        public Remington(string name) : base(name) {}
+        public Remington(int Id) : base(Id) {}
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }

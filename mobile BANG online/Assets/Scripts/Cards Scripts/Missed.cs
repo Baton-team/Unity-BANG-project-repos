@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missed : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Missed : Card
     {
-        
-    }
+        public int id;
+        public string Name = "Missed";
+        public string cardDiscription = "Missed card";
 
-    // Update is called once per frame
-    void Update()
-    {
+        public bool IsPlayable;
         
+        public Missed(string name) : base(name) {}
+        public Missed(int Id) : base(Id) {}
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }

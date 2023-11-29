@@ -6,6 +6,16 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Weapon : Card
     {
+        public int id;
+        public string Name = "Weapon";
+        public string cardDiscription = "Weapon card";
+
+        public bool IsPlayable;
+
+        public Weapon(string name) : base(name) {}
+        public Weapon(int Id) : base(Id) {}
+
+
         // Start is called before the first frame update
         void Start()
         {
