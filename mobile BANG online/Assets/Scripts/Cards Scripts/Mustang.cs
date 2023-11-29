@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mustang : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Mustang : Card
     {
-        
-    }
+        public int id;
+        public string Name = "Mustang";
+        public string cardDiscription = "Mustang card";
 
-    // Update is called once per frame
-    void Update()
-    {
+        public bool IsPlayable;
         
+        public Mustang(string name) : base(name) {}
+        public Mustang(int Id) : base(Id) {}
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }
