@@ -6,9 +6,14 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Bang : Card
     {
-        // Start is called before the first frame update
+        public int id;
+        public string Name = "Bang";
+        public string cardDiscription = "BANG card";
+
+        public bool IsPlayable;
         
         public Bang(string name) : base(name) {}
+        public Bang(int Id) : base(Id) {}
 
         public override void Ability(IPlayer target)
         {

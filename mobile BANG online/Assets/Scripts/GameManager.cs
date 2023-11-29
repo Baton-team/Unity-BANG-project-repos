@@ -6,11 +6,24 @@ using UnityEditor;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using Photon.Pun.Demo.Cockpit;
 
 namespace Com.BATONteam.mobileBANGonline
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        #region Public Fields
+
+        public static GameManager Instance;
+
+        [Tooltip("The prefab to use for representing the connected player")]
+        public GameObject connectedPlayerPrefab;
+
+        [Tooltip("The prefab to use for representing the player")]
+        public GameObject playerPrefab;
+
+        #endregion
+
         #region Private Serializable Fields
 
         [Tooltip("The scene we exit in.")]
@@ -45,11 +58,11 @@ namespace Com.BATONteam.mobileBANGonline
         public override void OnPlayerLeftRoom(Player other)
         {
             Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
-
+            
             if (PhotonNetwork.IsMasterClient)
             {
                 Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
-
+                
                 LoadArena();
             }
         }
@@ -75,8 +88,30 @@ namespace Com.BATONteam.mobileBANGonline
                 return;
             }
 
-            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", 4);
+            Debug.LogFormat("PhotonNetwork : Game Area");
             PhotonNetwork.LoadLevel("Game Area");
+        }
+
+        private void InstantiateConnectedPlayer()
+        {
+            if(connectedPlayerPrefab == null || playerPrefab == null)
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> connectedPlayerPrefab or playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            }
+            else
+            {
+                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                switch(PhotonNetwork.CurrentRoom.PlayerCount)
+                {
+                    case 1:
+                        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector2(0f, -5f), Quaternion.identity, 0);
+                        break;
+                    case 2:
+                        PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, new Vector2(-10f, 2f), Quaternion.identity, 0);
+                        break;
+                }
+            }
         }
 
         #endregion
@@ -85,6 +120,9 @@ namespace Com.BATONteam.mobileBANGonline
         void Start()
         {
             roomName.text = PhotonNetwork.CurrentRoom.Name;
+            Instance = this;
+
+            InstantiateConnectedPlayer();
         }
 
         void Update()

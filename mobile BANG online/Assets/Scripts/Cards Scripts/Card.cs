@@ -6,18 +6,21 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Card : MonoBehaviour
     {
-        void Start()
-        {
-
-        }
+        protected int id;
         protected string Name;
-
+        public string cardDiscription;
+        
         protected bool IsPlayable;
 
+        public Card(){}
         public Card(string name)
         {
             Name = name;
             IsPlayable = true;
+        }
+        public Card(int Id)
+        {
+            id = Id;
         }
         public void CopyFrom(Card another)
         {
@@ -27,6 +30,11 @@ namespace Com.BATONteam.mobileBANGonline
         public virtual void Ability(IPlayer another)
         {
             if (another == null) { }
+        }
+
+        void Start()
+        {
+
         }
 
         void Update()

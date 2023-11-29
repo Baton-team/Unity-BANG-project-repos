@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WellsFargo : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WellsFargo : Card
     {
-        
-    }
+        public int id;
+        public string Name = "WellsFargo";
+        public string cardDiscription = "WellsFargo card";
 
-    // Update is called once per frame
-    void Update()
-    {
+        public bool IsPlayable;
         
+        public WellsFargo(string name) : base(name) {}
+        public WellsFargo(int Id) : base(Id) {}
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }
