@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233670831164",
+    "project_id": "bang-online-database",
+    "storage_bucket": "bang-online-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233670831164:android:327218869da4ea43366739",
+        "android_client_info": {
+          "package_name": "com.google.firebase.bang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIcDwMcLsZt5JBlClkINueSNzo-_-skso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
