@@ -5,14 +5,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Diligence : Card
     {
-        public int id;
-        public string Name = "Diligence";
-        public string cardDiscription = "Diligence card";
-
-        public bool IsPlayable;
-        
-        public Diligence(string name) : base(name) {}
-        public Diligence(int Id) : base(Id) {}
+        string Name = "Diligence";
+        string cardDiscription = "Diligence card";
         
         // Start is called before the first frame update
         void Start()

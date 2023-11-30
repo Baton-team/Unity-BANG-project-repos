@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Salun : Card
     {
-        public int id;
-        public string Name = "Salun";
-        public string cardDiscription = "Salun card";
-
-        public bool IsPlayable;
-        
-        public Salun(string name) : base(name) {}
-        public Salun(int Id) : base(Id) {}
+        string Name = "Salun";
+        string cardDiscription = "Salun card";
 
         // Start is called before the first frame update
         void Start()

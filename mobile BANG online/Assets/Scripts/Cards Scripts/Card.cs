@@ -6,7 +6,7 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Card : MonoBehaviour
     {
-        protected int id;
+        protected int Id;
         protected string Name;
         public string cardDiscription;
         
@@ -18,14 +18,14 @@ namespace Com.BATONteam.mobileBANGonline
             Name = name;
             IsPlayable = true;
         }
-        public Card(int Id)
+        public Card(int id)
         {
-            id = Id;
+            Id = id;
         }
         public void CopyFrom(Card another)
         {
-            this.Name = another.Name;
-            this.IsPlayable = another.IsPlayable;
+            Name = another.Name;
+            IsPlayable = another.IsPlayable;
         }
         public virtual void Ability(IPlayer another)
         {

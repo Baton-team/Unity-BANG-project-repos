@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class WellsFargo : Card
     {
-        public int id;
-        public string Name = "WellsFargo";
-        public string cardDiscription = "WellsFargo card";
-
-        public bool IsPlayable;
-        
-        public WellsFargo(string name) : base(name) {}
-        public WellsFargo(int Id) : base(Id) {}
+        string Name = "WellsFargo";
+        string cardDiscription = "WellsFargo card";
 
         // Start is called before the first frame update
         void Start()

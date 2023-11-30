@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Scope : Card
     {
-        public int id;
-        public string Name = "Scope";
-        public string cardDiscription = "Scope card";
-
-        public bool IsPlayable;
-        
-        public Scope(string name) : base(name) {}
-        public Scope(int Id) : base(Id) {}
+        string Name = "Scope";
+        string cardDiscription = "Scope card";
 
         // Start is called before the first frame update
         void Start()
