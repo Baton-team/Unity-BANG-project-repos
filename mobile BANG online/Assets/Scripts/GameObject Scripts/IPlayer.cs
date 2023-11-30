@@ -8,15 +8,15 @@ namespace Com.BATONteam.mobileBANGonline
     {
         // Start is called before the first frame update
 
-        private Role Role;
-        private string Name;
-        private string ID;
-        private int Hp;
-        private List<Card> Hand;
-        private Weapon Weapon;
-        private int DisanceTo;
-        private int DistanceFrom;//?
-        private bool IsDead = false;
+        protected Role Role;
+        protected string Name;
+        protected string ID;
+        protected int Hp;
+        public List<GameObject> Hand;
+        protected Weapon Weapon;
+        protected int DisanceTo;
+        protected int DistanceFrom;//?
+        protected bool IsDead = false;
 
         void Start()
         {
