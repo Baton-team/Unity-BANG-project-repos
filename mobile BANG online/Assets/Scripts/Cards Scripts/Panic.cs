@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Panic : Card
     {
-        public int id;
-        public string Name = "Panic";
-        public string cardDiscription = "Panic card";
-
-        public bool IsPlayable;
-        
-        public Panic(string name) : base(name) {}
-        public Panic(int Id) : base(Id) {}
+        string Name = "Panic";
+        string cardDiscription = "Panic card";
 
         // Start is called before the first frame update
         void Start()

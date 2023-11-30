@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Missed : Card
     {
-        public int id;
-        public string Name = "Missed";
-        public string cardDiscription = "Missed card";
-
-        public bool IsPlayable;
-        
-        public Missed(string name) : base(name) {}
-        public Missed(int Id) : base(Id) {}
+        string Name = "Missed";
+        string cardDiscription = "Missed card";
 
         // Start is called before the first frame update
         void Start()

@@ -19,7 +19,7 @@ namespace Com.BATONteam.mobileBANGonline
             cards = new List<Card>();
             for (int i = 0; i < 25; i++)
             {
-                Bang bang = new Bang("Bang");
+                Bang bang = new Bang();
                 cards.Add(bang);
             }
         }

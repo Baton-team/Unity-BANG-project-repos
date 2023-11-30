@@ -6,14 +6,9 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Beer : Card
     {
-        public int id;
-        public string Name = "Beer";
-        public string cardDiscription = "Beer card";
-
-        public bool IsPlayable;
+        string Name = "Beer";
+        string cardDiscription = "Beer card";
         
-        public Beer(string name) : base(name) {}
-        public Beer(int Id) : base(Id) {}
         // Start is called before the first frame update
         void Start()
         {

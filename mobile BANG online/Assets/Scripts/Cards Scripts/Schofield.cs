@@ -7,13 +7,8 @@ namespace Com.BATONteam.mobileBANGonline
     public class Schofield : Weapon
     {
         public int id;
-        public string Name = "Schofield";
-        public string cardDiscription = "Schofield card";
-
-        public bool IsPlayable;
-        
-        public Schofield(string name) : base(name) {}
-        public Schofield(int Id) : base(Id) {}
+        string Name = "Schofield";
+        string cardDiscription = "Schofield card";
 
         // Start is called before the first frame update
         void Start()

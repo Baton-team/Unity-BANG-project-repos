@@ -6,14 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Bang : Card
     {
-        public int id;
-        public string Name = "Bang";
-        public string cardDiscription = "BANG card";
-
-        public bool IsPlayable;
-        
-        public Bang(string name) : base(name) {}
-        public Bang(int Id) : base(Id) {}
+        string Name = "Bang";
+        string cardDiscription = "BANG card";
 
         public override void Ability(IPlayer target)
         {
