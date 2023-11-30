@@ -6,17 +6,15 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Weapon : Card
     {
+        string Name = "Weapon";
+        string cardDiscription = "Weapon card";
+
         // Start is called before the first frame update
         void Start()
         {
             
         }
         public int Distance;
-
-        public Weapon(string name, int value) : base(name)
-        {
-            Distance = value;
-        }
 
         public override void Ability(IPlayer ThisPlayer)
         {
