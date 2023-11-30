@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beer : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Beer : Card
     {
+        string Name = "Beer";
+        string cardDiscription = "Beer card";
         
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }

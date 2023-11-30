@@ -6,9 +6,8 @@ namespace Com.BATONteam.mobileBANGonline
 {
     public class Bang : Card
     {
-        // Start is called before the first frame update
-        
-        public Bang(string name) : base(name) {}
+        string Name = "Bang";
+        string cardDiscription = "BANG card";
 
         public override void Ability(IPlayer target)
         {

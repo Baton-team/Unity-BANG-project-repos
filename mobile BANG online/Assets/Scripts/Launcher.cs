@@ -68,7 +68,7 @@ namespace Com.BATONteam.mobileBANGonline
         /// MonoBehaviour method called on GameObject by Unity during initialization phase.
         /// </summary>
         void Start()
-        {
+        {            
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
             
