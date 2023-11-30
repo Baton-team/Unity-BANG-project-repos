@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Salun : MonoBehaviour
+namespace Com.BATONteam.mobileBANGonline
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Salun : Card
     {
-        
-    }
+        public int id;
+        public string Name = "Salun";
+        public string cardDiscription = "Salun card";
 
-    // Update is called once per frame
-    void Update()
-    {
+        public bool IsPlayable;
         
+        public Salun(string name) : base(name) {}
+        public Salun(int Id) : base(Id) {}
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
     }
 }
