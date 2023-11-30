@@ -850,6 +850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1161676010963063459, guid: 44df303be9fbff54dbe9e2e0626656d7, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2179834564864642843, guid: 44df303be9fbff54dbe9e2e0626656d7, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -898,14 +902,6 @@ PrefabInstance:
       propertyPath: roomName
       value: 
       objectReference: {fileID: 1793396277}
-    - target: {fileID: 5527208422118248604, guid: 44df303be9fbff54dbe9e2e0626656d7, type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 7150800830237150394, guid: bf964d37da47f68498d958e4cd776c17, type: 3}
-    - target: {fileID: 5527208422118248604, guid: 44df303be9fbff54dbe9e2e0626656d7, type: 3}
-      propertyPath: connectedPlayerPrefab
-      value: 
-      objectReference: {fileID: 3887902040594578922, guid: 9b6c303fec2d70b438ce622fab60ab7d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

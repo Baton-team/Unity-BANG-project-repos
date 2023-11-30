@@ -14,7 +14,7 @@ namespace Com.BATONteam.mobileBANGonline
         {
             
         }
-        public int Distance;
+        int Distance;
 
         public override void Ability(IPlayer ThisPlayer)
         {
