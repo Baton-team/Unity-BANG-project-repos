@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257402746735943831}
   - component: {fileID: 5527208422118248604}
+  - component: {fileID: 1161676010963063459}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -43,6 +44,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1ce2895d29b93f4e835eb77fe145c65, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
+  connectedPlayerPrefab: {fileID: 3887902040594578922, guid: 9b6c303fec2d70b438ce622fab60ab7d, type: 3}
+  playerPrefab: {fileID: 7150800830237150394, guid: bf964d37da47f68498d958e4cd776c17, type: 3}
   exitScene: Main Menu
   roomName: {fileID: 0}
+--- !u!114 &1161676010963063459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179834564864642843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

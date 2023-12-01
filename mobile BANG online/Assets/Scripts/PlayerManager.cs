@@ -6,6 +6,8 @@ using UnityEditor;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using Unity.VisualScripting;
+using TMPro;
 
 namespace Com.BATONteam.mobileBANGonline
 {
@@ -19,6 +21,11 @@ namespace Com.BATONteam.mobileBANGonline
         #endregion
 
         #region MonoBehaviour Callbacks
+
+        void Awake()
+        {
+            this.GetComponentInChildren<TextMeshPro>().text = PhotonNetwork.NickName;
+        }
         void Start()
         {
             
@@ -30,7 +37,7 @@ namespace Com.BATONteam.mobileBANGonline
             {
                 if(Health <= 0)
                 {
-                    GameManager.Instance.LeaveRoom();
+                    PhotonNetwork.LeaveRoom();
                 }
             }
         }

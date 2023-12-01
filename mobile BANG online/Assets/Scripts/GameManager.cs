@@ -102,15 +102,17 @@ namespace Com.BATONteam.mobileBANGonline
             {
                 Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                switch(PhotonNetwork.CurrentRoom.PlayerCount)
-                {
-                    case 1:
-                        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector2(0f, -5f), Quaternion.identity, 0);
-                        break;
-                    case 2:
-                        PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, new Vector2(-10f, 2f), Quaternion.identity, 0);
-                        break;
-                }
+                // switch(PhotonNetwork.CurrentRoom.PlayerCount)
+                // {
+                //     case 1:
+                //         PhotonNetwork.Instantiate(this.playerPrefab.name, PlayerSettler.new Vector2(-5f, 2f), Quaternion.identity, 0);
+                //         break;
+                //     case 2:
+                //         PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, new Vector2(-10f, 2f), Quaternion.identity, 0);
+                //         break;
+                // }
+                
+                PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, PlayerSettler.CalculatePlayerPositions(PhotonNetwork.CurrentRoom.PlayerCount), Quaternion.identity, 0);
             }
         }
 

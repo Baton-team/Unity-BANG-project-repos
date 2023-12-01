@@ -14,8 +14,8 @@ public class ButchCassidy: IPlayer
         //{
         //    ++Hp;
         //}
-        Weapon = new Weapon("Kolt", 1);
-        DisanceTo = Weapon.Distance;
+        //Weapon = new Weapon("Kolt", 1);
+        //DisanceTo = Weapon.Distance;
         IsDead = false;
     }
 

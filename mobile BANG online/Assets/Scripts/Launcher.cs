@@ -71,9 +71,11 @@ namespace Com.BATONteam.mobileBANGonline
         {            
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
-            
-            PhotonNetwork.ConnectUsingSettings();
-            PhotonNetwork.GameVersion = gameVersion;
+            if(!PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.ConnectUsingSettings();
+                PhotonNetwork.GameVersion = gameVersion;
+            }
             PhotonNetwork.JoinLobby();
 
             LogsManager.WriteLog("==================================\nOnline Launcher: is started.");
