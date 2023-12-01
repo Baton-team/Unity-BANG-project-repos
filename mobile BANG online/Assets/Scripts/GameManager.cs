@@ -111,6 +111,7 @@ namespace Com.BATONteam.mobileBANGonline
                 //         PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, new Vector2(-10f, 2f), Quaternion.identity, 0);
                 //         break;
                 // }
+                
                 PhotonNetwork.Instantiate(this.connectedPlayerPrefab.name, PlayerSettler.CalculatePlayerPositions(PhotonNetwork.CurrentRoom.PlayerCount), Quaternion.identity, 0);
             }
         }

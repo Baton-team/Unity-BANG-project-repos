@@ -37,7 +37,7 @@ namespace Com.BATONteam.mobileBANGonline
             {
                 if(Health <= 0)
                 {
-                    GameManager.Instance.LeaveRoom();
+                    PhotonNetwork.LeaveRoom();
                 }
             }
         }
